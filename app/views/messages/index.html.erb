@@ -1,22 +1,22 @@
 <div class="panel panel-default">
   <div class="panel-heading">
-    メッセージ一覧
+    <b>メッセージ一覧</b>
   </div>
     
   <div class="panel-body">
     <% @messages.each do |message| %>
       <span class="label label-info"><%= message.name %></span>
-      <%= message.body %>
       <br>
+      <%= f.text_area :message.body %>
     <% end %>
   </div>
 </div>
 
 <%= form_for(Message.new) do |f| %>
-  名前:
+  <b>名前:</b>
   <%= f.text_field :name %>
 
-  内容:
+  <b>内容:</b>
   <%= f.text_field :body %>
   <%= f.submit class: "btn btn-sm btn-primary" %>
 <% end %>
